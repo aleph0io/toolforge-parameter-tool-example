@@ -1,0 +1,66 @@
+toolforge: 1.0
+tool: 98oev7tw
+parameters:
+  - type: string
+    domain:
+      type: pattern
+      pattern: "hello+world"
+    default: helloooooworld
+    name: stringpattern
+    description: "This is a string with a pattern domain."
+    required: false
+  - type: string
+    domain:
+      type: enumeration
+      values:
+        - alpha
+        - bravo
+        - charlie
+    default: alpha
+    name: stringenumeration
+    description: "This is a string with an enumeration domain."
+    required: false
+  - type: int
+    name: int
+    minimum: 0
+    maximum: 100
+    default: 10
+    description: "This is an integer."
+    required: false
+  - type: float
+    name: float
+    minimum: 0.0
+    maximum: 100.0
+    default: 10.0
+    description: "This is a float."
+    required: false
+  - type: boolean
+    name: boolean
+    default: true
+    description: "This is a boolean."
+    required: false
+  - type: date
+    name: date
+    minimum: -1y
+    maximum: today
+    default: -3m
+    description: "This is a date."
+    required: false
+  - type: string
+    domain:
+      type: pattern
+      pattern: "^(alpha|bravo|charlie)$"
+    name: required
+    default: alpha
+    description: "This is a required string"
+    required: true
+inputs:
+  - name: inputs
+    description: "What strings should I output?"
+    extensions:
+      - txt
+outputs:
+  - name: outputs
+    description: "The same as the inputs!"
+    extensions:
+      - txt
